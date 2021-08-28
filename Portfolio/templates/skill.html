@@ -1,0 +1,38 @@
+    {% for other in otherdetails %}
+<section class="clients" style="background: url('{{other.Featurepic.url}}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 wow fadeIn">
+                <h6>{{other.Skillquote1}}</h6>
+                <h1 class="big">Skills</h1>
+                <h2 class="port_sub_heading">My Skills</h2>
+                <h4>{{other.Skillquote2}}</h4>
+
+                <!-- end custom-link -->
+            </div>
+            <!-- end col-4 -->
+            <div class="col-lg-9 wow fadeIn mt-5" data-wow-delay="0.10s">
+                <div class="row bar_sk">
+                    {% for skill in skills %}
+                    <div class="col-md-6 animate-box">
+                        <div class="progress-wrap ftco-animate">
+                            <h5>{{skill.SkillName}}</h5>
+                            <div class="progress">
+                                <div class="progress-bar color-1" role="progressbar"
+                                    aria-valuenow="{{skill.Rank}}" aria-valuemin="0" aria-valuemax="100"
+                                    style="width:{{skill.Rank}}%">
+                                    <span>{{skill.Rank}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- end col-7 -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+{% endfor %}

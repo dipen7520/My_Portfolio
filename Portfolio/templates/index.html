@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+{% include "head.html" %}
+
+<body>
+    {% include "nav.html" %}
+    {% include "banner.html" %}
+    <div class="port_togglebox">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="port_sec_warapper">
+        {% include "about.html" %}
+        {% include "education.html" %}
+        {% include "feature.html" %}
+        {% include "experience.html" %}
+        {% include "project.html" %}
+
+        <!-- start responsers section  -->
+        <section class="work-with-us">
+        {% for other in otherdetails %}
+        <style>
+            .work-with-us:before {
+                background: url('{{other.Tagpic.url}}');
+            }
+        </style>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <h6>{{other.Tagquote1}}</h6>
+                        <h2 data-text="{{other.Tagquote2}}">{{other.Tagquote3}}</h2>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+            {% endfor %}
+        </section>
+        <!-- End responsers section  -->
+        {% include "contact.html" %}
+    </div>
+<!-- go to top button -->
+<div class="bottom_top">
+    <i class="fa fa-arrow-up"></i>
+    <i class="fa fa-arrow-up"></i>
+</div>
+    
+
+    {% include "script.html" %}
+
+</body>
+
+</html>
